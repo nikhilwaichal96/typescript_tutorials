@@ -1,6 +1,9 @@
 
 # Typescript
 https://www.typescriptlang.org/docs/
+https://www.typescriptlang.org/cheatsheets/
+https://roadmap.sh/typescript
+https://www.typescripttutorial.net/
 
 ## installation 
 npm install typescript --save-dev
