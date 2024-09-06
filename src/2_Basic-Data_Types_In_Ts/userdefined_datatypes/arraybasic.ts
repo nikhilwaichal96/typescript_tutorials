@@ -45,3 +45,55 @@ console.log("filtered employee having salary greater than 1500",filteredEmployee
 //Find employee with name nikhil
 const searchEmployeeDetails = listEmp.find((emp)=>emp.empName==="nikhil")
 console.log("found employee",searchEmployeeDetails)
+
+
+//forEach with destructuring
+listEmp.forEach(({ empName, empSalary }) => {
+    console.log(`Employee Name: ${empName}, Salary: ${empSalary}`);
+});
+
+//destructuring
+const [firstEmployee, secondEmployee] = listEmp;
+
+console.log(firstEmployee); // Output: { empName: 'nikhil', empSalary: 1000 }
+console.log(secondEmployee); // Output: { empName: 'Abc', empSalary: 2000 }
+
+//filter by name
+const filterByName = (name: string) => {
+    const result = listEmp.filter(employee => employee.empName === name);
+    if (result.length === 0) {
+        throw new Error(`No employee found with name: ${name}`);
+    }
+    return result;
+};
+
+//Filter employees by names
+const filterByNames = (names: string[]) => {
+    const nameSet = new Set(names);
+    const result = listEmp.filter(employee => nameSet.has(employee.empName));
+    if (result.length === 0) {
+        throw new Error(`No employees found with names: ${names.join(', ')}`);
+    }
+    return result;
+};
+
+
+//Find by name
+const findByName = (name: string) => {
+    const employee = listEmp.find(employee => employee.empName === name);
+    if (!employee) {
+        throw new Error(`No employee found with name: ${name}`);
+    }
+    return employee;
+};
+
+
+const findByNames = (names: string[]) => {
+    const notFoundNames = names.filter(name => !listEmp.find(employee => employee.empName === name));
+    if (notFoundNames.length > 0) {
+        throw new Error(`No employees found with names: ${notFoundNames.join(', ')}`);
+    }
+    return listEmp.filter(employee => names.includes(employee.empName));
+};
+
+
