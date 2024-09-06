@@ -16,12 +16,21 @@ tsc --version
 ```
     tsc filename
     tsc file name -w 
+    node file name
 ```
 
 ## Create typescript project
 ```
     tsc --init //creates tsconfig.json
 ```
+
+### Execute typescript code directly using ts-node
+```
+1.Install npm install -g ts-node
+2. Run ts-node array.ts
+
+```
+
 ## What is typescript?
 
 - Typescript is superset of Javascript.
