@@ -30,6 +30,7 @@ class BankAccount{
     getBalance(){
         console.log(`Hello ${this.accountName}your balance is ${this.accountBalance}`)
     }
+    
 }
 
 const account1 = new BankAccount(101,"Nikhil",1000);
